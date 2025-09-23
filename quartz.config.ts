@@ -1,4 +1,5 @@
 import { QuartzConfig } from "./quartz/cfg"
+import { OgImage } from "./quartz/components"
 import * as Plugin from "./quartz/plugins"
 
 /**
@@ -86,10 +87,12 @@ const config: QuartzConfig = {
       }),
       Plugin.Assets(),
       Plugin.Static(),
-      // Plugin.Favicon(),
+      Plugin.Favicon(),
       Plugin.NotFoundPage(),
       // Comment out CustomOgImages to speed up build time
-      // Plugin.CustomOgImages(),
+      Plugin.CustomOgImages( {
+        colorScheme: "darkMode",
+      }),
     ],
   },
 }
